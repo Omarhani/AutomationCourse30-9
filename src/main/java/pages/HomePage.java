@@ -20,6 +20,10 @@ public class HomePage {
 
     private final By wysiwygEditor =By.linkText("WYSIWYG Editor");
 
+    private final By hoverLink = By.linkText("Hovers");
+
+    private final By dragAndDropLink = By.linkText("Drag and Drop");
+
 
     public LoginPage clickOnFormAuthenticationLink(){
         clickOnLink(formAuthenticationLink);
@@ -42,6 +46,14 @@ public class HomePage {
     public WYSIWYGEditorPage clickOnWYSIWYGEditorLink(){
         clickOnLink(wysiwygEditor);
         return new WYSIWYGEditorPage(driver);
+    }
+    public HoverPage clickOnHoverLink(){
+        clickOnLink(hoverLink);
+        return new HoverPage(driver);
+    }
+    public DragAndDropPage clickOnDragAndDropLink(){
+        clickOnLink(dragAndDropLink);
+        return new DragAndDropPage(driver);
     }
     private void clickOnLink(By locator){
         driver.findElement(locator).click();
